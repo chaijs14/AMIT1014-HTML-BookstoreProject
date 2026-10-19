@@ -1,0 +1,76 @@
+<?php
+session_start();
+require 'config.php';
+
+$message = '';
+$error = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $new_password = $_POST['new_password'];
+    $confirm_password = $_POST['confirm_password'];
+    
+    if ($new_password != $confirm_password) {
+        $error = "Passwords do not match!";
+    } elseif (strlen($new_password) < 6) {
+        $error = "Password must be at least 6 characters!";
+    } else {
+        $stmt = $pdo->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch();
+        
+        if ($user) {
+            $hash = password_hash($new_password, PASSWORD_DEFAULT);
+            $stmt = $pdo->prepare("UPDATE user SET password_hash = ? WHERE email = ?");
+            $stmt->execute([$hash, $email]);
+            $message = "Password reset successfully! You can now login.";
+        } else {
+            $error = "Email not found!";
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+    <div class="card">
+        <h2>Reset Password</h2>
+        
+        <?php if ($message): ?>
+            <div class="message success"><?php echo $message; ?></div>
+            <div class="links"><a href="login.php">← Back to Login</a></div>
+        <?php else: ?>
+            <?php if ($error): ?>
+                <div class="message error"><?php echo $error; ?></div>
+            <?php endif; ?>
+            
+            <form method="POST">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" name="new_password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirm_password" required>
+                </div>
+                <button type="submit">Reset Password</button>
+            </form>
+            <div class="links">
+                <a href="login.php">← Back to Login</a>
+            </div>
+        <?php endif; ?>
+    </div>
+</body>
+</html>

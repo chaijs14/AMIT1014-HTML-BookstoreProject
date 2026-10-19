@@ -1,0 +1,153 @@
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.cart-title {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* CART TABLE */
+.cart-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cart-header {
+    display: flex;
+    background: #f8f9fa;
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+}
+
+.cart-item {
+    display: flex;
+    padding: 20px 15px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.col-product {
+    flex: 3;
+}
+
+.col-price {
+    flex: 1;
+    text-align: center;
+}
+
+.col-quantity {
+    flex: 1;
+    text-align: center;
+}
+
+.col-total {
+    flex: 1;
+    text-align: right;
+}
+
+.product-info h4 {
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    font-size: 12px;
+    color: #888;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    color: #e74c3c;
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+/* CART SUMMARY */
+.cart-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: none;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+.discount {
+    color: #27ae60;
+}
+
+.pay-btn {
+    display: block;
+    background: #e74c3c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.pay-btn:hover {
+    background: #c0392b;
+}
+
+.continue-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    border-radius: 12px;
+}
+
+.empty-cart i {
+    font-size: 60px;
+    color: #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .cart-header {
+        display: none;
+    }
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .col-product, .col-price, .col-quantity, .col-total {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+}

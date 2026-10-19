@@ -1,0 +1,116 @@
+/* Index / Landing Page Styles */
+
+:root {
+    --rose-quartz: #F7CAC9;
+    --serenity: #92A8D1;
+    --serenity-dark: #7b94c4;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, var(--rose-quartz) 0%, var(--serenity) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- CLOUDS --- */
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.clouds::before, .clouds::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+.clouds::before {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -50px;
+    box-shadow: 200px 150px 0 -30px white, 400px 50px 0 20px white, 800px 100px 0 0 white;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+}
+
+.hero-container {
+    text-align: center;
+    color: white;
+    z-index: 10;
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: -2px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 20px 0 40px;
+    opacity: 0.9;
+}
+
+.start-btn {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--serenity-dark);
+    background: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.start-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    background: #f8f9fa;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .start-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}

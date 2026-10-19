@@ -1,0 +1,115 @@
+.main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.welcome-card {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.welcome-card h1 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.welcome-card .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 30px;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.welcome-card .btn:hover {
+    background: #c0392b;
+    transform: scale(1.02);
+}
+
+.welcome-card .btn-outline {
+    background: transparent;
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.welcome-card .btn-outline:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature i {
+    font-size: 40px;
+    color: #92A8D1;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Exit Guest Button */
+.exit-guest-btn {
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.exit-guest-btn:hover {
+    background: #c0392b;
+    transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .welcome-card {
+        padding: 30px 20px;
+    }
+    
+    .welcome-card .btn {
+        display: block;
+        margin: 10px auto;
+    }
+}

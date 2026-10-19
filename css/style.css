@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --rose-quartz: #F7CAC9;
+    --serenity: #92A8D1;
+    --serenity-dark: #7b94c4;
+    --glass: rgba(255, 255, 255, 0.85);
+}
+
+body {
+    background: #f5f5f5;
+}
+
+/* TOP BAR - Used on all pages */
+.top-bar {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav a:hover {
+    color: #e74c3c;
+}
+
+/* ALERTS */
+.alert {
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #c0392b;
+}
+
+/* STATUS BADGES */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-Pending {
+    background: #ffe0b2;
+    color: #e65100;
+}
+
+.status-Approved {
+    background: #c8e6c9;
+    color: #2e7d32;
+}
+
+.status-Rejected {
+    background: #ffcdd2;
+    color: #c62828;
+}
+
+/* FORMS */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* FOOTER */
+.footer {
+    background: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+}
